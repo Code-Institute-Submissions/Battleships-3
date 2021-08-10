@@ -26,10 +26,10 @@ def guess_position(board):
     computer_choice_row = int(randint(0,4))
     computer_choice_column = int(randint(0,4))
     print(computer_choice_row, computer_choice_column)
-    
+   
     user_guesses = 0
 
-    while user_guesses <4:
+    while user_guesses < 5:
         guess_row = int(input('Guess Row Position: '))
         guess_column = int(input('Guess Column Position: '))
 
@@ -46,11 +46,15 @@ def guess_position(board):
         elif board[guess_column][guess_row] == 'X':
             print('You already missed your target here!')
             
+
         else:
             print('You missed the battleship!!')
             board[guess_row][guess_column] = 'X'
             print_board(board)
-            
+            user_guesses +=1
+            print (f"{user_guesses} Guesses of 5 Guesses Used!!")
+            if user_guesses == 5:
+                print("Game Over You Only Have 5 Turns!!!!")
        
 
 
@@ -68,6 +72,7 @@ def start_game():
     """
     print_board(board)
     guess_position(board)
+    #game_loop(board)
     #validate_input(user_choice)
 
 
