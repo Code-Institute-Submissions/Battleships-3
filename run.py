@@ -1,23 +1,32 @@
 from random import randint
+
 """
 Build Board
 """
 board = []
 for i in range(0, 5):
-    board.append(['O'] * 5)
+    board.append(['O '] * 5) 
 
 
 def print_board(board):
     """
     Prints board to the terminal in a 5x5 format
     """
+    print("""
+░█▀▀█ █▀▀█ ▀▀█▀▀ ▀▀█▀▀ █── █▀▀ █▀▀ █──█ ─▀─ █▀▀█ █▀▀ 
+░█▀▀▄ █▄▄█ ──█── ──█── █── █▀▀ ▀▀█ █▀▀█ ▀█▀ █──█ ▀▀█ 
+░█▄▄█ ▀──▀ ──▀── ──▀── ▀▀▀ ▀▀▀ ▀▀▀ ▀──▀ ▀▀▀ █▀▀▀ ▀▀▀""")
+    print("======================================================")
+    print("======================================================")
     for row in board: 
         print(''.join(row))
+    print("======================================================")
+    print("======================================================")
         
 
 
 
-def guess_position(board):
+def set_game_board(board):
     """
     Populates and returns random position within board, allows for
     user input and calculates whether or not the user input is a hit or miss. 
@@ -43,13 +52,13 @@ def guess_position(board):
         elif guess_row not in range(5) or guess_column not in range(5):
                 print (f'The numbers you entered are outside of the board! You entered {guess_row} and {guess_column}. Numbers entered must be between 0 and 4')
         
-        elif board[guess_column][guess_row] == 'X':
-            print('You already missed your target here!')
+        elif board[guess_column][guess_row] == 'X ':
+            print("""🆈 🅾 🆄  🅰 🅻 🆁 🅴 🅰 🅳 🆈  🅼 🅸 🆂 🆂 🅴 🅳  🆃 🅷 🅴  🆃 🅰 🆁 🅶 🅴 🆃   🅷 🅴 🆁 🅴❗❗""")
             
-
+            
         else:
-            print('You missed the battleship!!')
-            board[guess_row][guess_column] = 'X'
+            print("""🆈 🅾 🆄  🅼 🅸 🆂 🆂 🅴 🅳  🆃 🅷 🅴  🅱 🅰 🆃 🆃 🅻 🅴 🆂 🅷 🅸 🅿 ❗❗""")
+            board[guess_row][guess_column] = 'X '
             print_board(board)
             user_guesses +=1
             print (f"{user_guesses} Guesses of 5 Guesses Used!!")
@@ -70,10 +79,12 @@ def start_game():
     """
     Starts Game
     """
+    #build_board()
     print_board(board)
-    guess_position(board)
+    set_game_board(board)
     #game_loop(board)
     #validate_input(user_choice)
+    #check_user_input(guess_column,guess_row)
 
 
 start_game()
