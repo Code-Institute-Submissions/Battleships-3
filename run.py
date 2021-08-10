@@ -14,42 +14,30 @@ def print_board(board):
     for row in board: 
         print(''.join(row))
 
-
-def computer_choice(board):
-    """
-    Populates and returns random position within board
-    """
-    computer_choice_row = randint(0,4)
-    computer_choice_column = randint(0,4)
-    print(computer_choice_column, computer_choice_row)
-    return computer_choice_column, computer_choice_row
-
-    
+print_board(board)
 
 def guess_position(board):
     """
-    Asks user for input of column and row guess
+    Populates and returns random position within board, allows for
+    user input and calculates whether or not the user input is a hit or miss.
     """
-    guess_column = input('Guess Row Position: ')
-    guess_row = input('Guess Column Position: ')
-    return guess_column, guess_row
+    computer_choice_row = int(randint(0,4))
+    computer_choice_column = int(randint(0,4))
+    print(computer_choice_row, computer_choice_column)
+    
+    guess_row = int(input('Guess Row Position: '))
+    guess_column = int(input('Guess Column Position: '))
+    computer_choice = computer_choice_column, computer_choice_row
+    user_choice = guess_column, guess_row
 
-
-computer_guess = computer_choice(board)   
-user_guess = guess_position(board)
-
-
-def calculate_hit():
-    if computer_guess == user_guess:
+    if computer_choice == user_choice:
         print("Hit")
-    #else:
-        # print('miss')
+    else:
+        print('miss')
+
+    
 
 
 
 
-
-print_board(board)
-computer_choice(board)
 guess_position(board)
-calculate_hit()
