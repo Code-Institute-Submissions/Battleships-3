@@ -56,17 +56,19 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
 
         if guess_row not in range(rows) or guess_column not in range(cols):
             print(f'The numbers you entered are outside of the board! You entered {guess_row} and {guess_column}. Numbers entered must be between 0 and {rows - 1}')
-            print(user_choice)
+            
         elif board[guess_row][guess_column] == 'H ':
             print("""𝕐𝕠𝕦 𝔸𝕝𝕣𝕖𝕒𝕕𝕪 Guessed 𝕋𝕙𝕖 𝕋𝕒𝕣𝕘𝕖𝕥 ℍ𝕖𝕣𝕖❕❕❕""")
             print_board()
-            print(user_choice)
+            guess_row = int(input('Guess Row Position: '))
+            guess_column = int(input('Guess Column Position: '))
         elif user_choice in ship_locations:
             correct_guesses = correct_guesses + 1
             board[guess_row][guess_column] = 'H '
             user_guesses += 1
             print(HIT)
-            print(user_choice)
+            guess_row = int(input('Guess Row Position: '))
+            guess_column = int(input('Guess Column Position: '))
         if correct_guesses == no_of_ships:
                  print(CONGRAT)
                  print(WIN)
@@ -74,7 +76,8 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
         elif board[guess_row][guess_column] == 'X ':
             print("""𝕐𝕠𝕦 𝔸𝕝𝕣𝕖𝕒𝕕𝕪 𝕄𝕚𝕤𝕤𝕖𝕕 𝕋𝕙𝕖 𝕋𝕒𝕣𝕘𝕖𝕥 ℍ𝕖𝕣𝕖❕❕❕""")
             print_board()
-            
+            guess_row = int(input('Guess Row Position: '))
+            guess_column = int(input('Guess Column Position: '))
         else:
             print("""𝕐𝕠𝕦 𝕄𝕚𝕤𝕤𝕖𝕕 𝕋𝕙𝕖 𝕥𝕒𝕣𝕘𝕖𝕥 ℍ𝕖𝕣𝕖❕❕❕""")
             board[guess_row][guess_column] = 'X '
