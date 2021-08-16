@@ -83,7 +83,7 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
 
 
 def get_level_and_validate():
-    level_select = int(input('Please choose a number between 1 and 5. 1 being easy and 5 being the hardest:  '))
+    level_select = int(input())
     if level_select not in range(5):
         print(f'You must choose a level between 1 and 5. You chose {level_select} !! ')
         return get_level_and_validate()
@@ -92,6 +92,10 @@ def get_level_and_validate():
 
 
 def get_level_params(level):
+    rows = None 
+    cols = None
+    no_of_ships = None
+    no_of_guesses = None
     if level == 1:
         [rows, cols] = [5,5]
         no_of_ships = 6
@@ -104,7 +108,7 @@ def get_level_params(level):
         [rows, cols] = [7,7]
         no_of_ships = 3
         no_of_guesses = 5
-    elif level == 3:
+    elif level == 4:
         [rows, cols] = [7,7]
         no_of_ships = 3
         no_of_guesses = 5
@@ -121,6 +125,7 @@ def start_game():
 
     print(BATTLESHIP)
     print(BATTLESHIP_TEXT)
+    print('Please choose a number between 1 and 5. 1 being easy and 5 being the hardest:  ')
     level = get_level_and_validate()
     rows, cols, no_of_ships, no_of_guesses = get_level_params(level)
 
