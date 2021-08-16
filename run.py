@@ -1,5 +1,5 @@
 from random import randint
-from constants import BATTLESHIP_TEXT, GAME_OVER, GAME_OVER, DASH, BATTLESHIP
+from constants import BATTLESHIP_TEXT, GAME_OVER, GAME_OVER, DASH, BATTLESHIP, CONGRAT, WIN, HIT
 
 """
 Build Board
@@ -63,9 +63,10 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
             correct_guesses = correct_guesses + 1
             board[guess_row][guess_column] = 'H '
             user_guesses += 1
-            print("Correct guess")
+            print(HIT)
             if correct_guesses == no_of_ships:
-                 print("You Win")
+                 print(CONGRAT)
+                 print(WIN)
                  break
         elif board[guess_row][guess_column] == 'X ':
             print("""𝕐𝕠𝕦 𝔸𝕝𝕣𝕖𝕒𝕕𝕪 𝕄𝕚𝕤𝕤𝕖𝕕 𝕋𝕙𝕖 𝕋𝕒𝕣𝕘𝕖𝕥 ℍ𝕖𝕣𝕖❕❕❕""")
