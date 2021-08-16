@@ -41,7 +41,7 @@ When the position is guessed correctly then the user is presented with a message
 
 I tested the project throughout the coding process by making the terminal print the computers guesses out to the terminal to allow my to guess the correct or incorrect positions while checking that he code worked.
 
-I passed the code through the PEP8 validator where the only faults found were due to text decoration used for the terminal statement output.
+
 
 ![](images/PEP8_check.JPG)
 
@@ -53,7 +53,7 @@ I passed the code through the PEP8 validator where the only faults found were du
 #
 ## Validator Testing
 
-* Validation for code was through PEP8 validator
+I passed the code through the PEP8 validator where the only faults found are due to text decoration used for the terminal statement output.
 #
 ## Deployment
 #
