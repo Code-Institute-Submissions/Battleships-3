@@ -84,12 +84,11 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
 
 def get_level_and_validate():
     level_select = int(input())
-    if level_select not in range(5):
-        print(f'You must choose a level between 1 and 5. You chose {level_select} !! ')
+    if level_select < 0 or level_select > 5:
+        print(f'You must choose a level between 1 and 5. You chose {level_select} !! Please enter again! ')
         return get_level_and_validate()
     else:
         return level_select
-
 
 def get_level_params(level):
     rows = None 
