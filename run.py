@@ -1,19 +1,21 @@
 from random import randint
-from constants import BATTLESHIP_TEXT, GAME_OVER, GAME_OVER, DASH, BATTLESHIP, HIT, CONGRAT, WIN
+from constants import BATTLESHIP_TEXT, GAME_OVER, DASH, BATTLESHIP, HIT, CONGRAT, WIN
 
-"""
-Build Board
-"""
+
 board = []
 
+
 def build_board(row, col):
+    """
+    Build Board
+    """
     for i in range(0, row):
         board.append(['O '] * col)
 
 
 def print_board():
     """
-    Prints board to the terminal in a 5x5 format
+    Prints board to the terminal.
     """
 
     print(DASH)
@@ -36,7 +38,7 @@ def generate_ship_positions(rows, columns):
 def set_game_board(no_of_ships, no_of_guesses, rows, cols):
     """
     sets the board with number of ships and ship locations. Checks to see if ships already placed in a selected position and does not place a ship in the same place twice.
-    sets the number of guesses for each game dependant on level.
+    sets the number of guesses for each game dependant on level. Prints out either H for hit or X for a miss onto the board.
     """
     ship_locations = []
     ships_added = 0
@@ -84,6 +86,9 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
 
 
 def get_level_and_validate():
+    """
+    Sets game level based on user input, changes board size, number of guesses and number of ships for the game. Validates user input on selection of level.
+    """
     level_select = int(input())
     if level_select < 0 or level_select > 5:
         print(f'You must choose a level between 1 and 5. You chose {level_select} !! Please enter again! ')
@@ -91,32 +96,34 @@ def get_level_and_validate():
     else:
         return level_select
 
+
 def get_level_params(level):
-    rows = None 
+    rows = None
     cols = None
     no_of_ships = None
     no_of_guesses = None
     if level == 1:
-        [rows, cols] = [5,5]
-        no_of_ships = 6
+        [rows, cols] = [4, 4]
+        no_of_ships = 3
         no_of_guesses = 5
     elif level == 2:
-        [rows, cols] = [6,6]
+        [rows, cols] = [6, 6]
         no_of_ships = 5
         no_of_guesses = 5
     elif level == 3:
-        [rows, cols] = [7,7]
+        [rows, cols] = [7, 7]
         no_of_ships = 3
         no_of_guesses = 5
     elif level == 4:
-        [rows, cols] = [7,7]
+        [rows, cols] = [7, 7]
         no_of_ships = 3
         no_of_guesses = 5
     elif level == 5:
-        [rows, cols] = [7,7]
+        [rows, cols] = [7, 7]
         no_of_ships = 2
         no_of_guesses = 4
     return rows, cols, no_of_ships, no_of_guesses
+
 
 def start_game():
     """
@@ -133,5 +140,5 @@ def start_game():
     print_board()
     set_game_board(no_of_ships, no_of_guesses, rows, cols)
 
-start_game()
 
+start_game()

@@ -49,7 +49,7 @@ I tested the project throughout the coding process by making the terminal print 
 ## Bugs
 
 1. The first bug that I came across was "list assignment index out of range" This was due to me only using one random generated number between 0 and 24 not taking into account that I had looped a list of 5 O's 5 times meaning that the index would only ever be between 0 and 4 and this needed to be twice. Once for the row and again for the column.
-2.
+2. When deployed to Heroku program did not run the same as Python Terminal 
 #
 ## Validator Testing
 
