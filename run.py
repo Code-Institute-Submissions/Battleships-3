@@ -56,7 +56,6 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
         guess_row = int(input())
         print('Guess Column Position: ')
         guess_column = int(input())
-        guess_column = input('Guess Column Position: ')
         user_choice = [guess_row, guess_column]
 
         if guess_row not in range(rows) or guess_column not in range(cols):
