@@ -35,6 +35,14 @@ def generate_ship_positions(rows, columns):
     return [computer_choice_row, computer_choice_column]
 
 
+def take_input(label=""):
+    try:
+        value = int(input(label))
+        return value
+    except:
+        return take_input(label)
+
+
 def set_game_board(no_of_ships, no_of_guesses, rows, cols):
     """
     sets the board with number of ships and ship locations. Checks to see if ships already placed in a selected position and does not place a ship in the same place twice.
@@ -53,9 +61,9 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
 
     while user_guesses < no_of_guesses:
         print('Guess Row Position: ')
-        guess_row = int(input())
+        guess_row = int(take_input())
         print('Guess Column Position: ')
-        guess_column = int(input())
+        guess_column = int(take_input())
         user_choice = [guess_row, guess_column]
 
         if guess_row not in range(rows) or guess_column not in range(cols):
@@ -94,7 +102,7 @@ def get_level_and_validate():
     """
     Sets game level based on user input, changes board size, number of guesses and number of ships for the game. Validates user input on selection of level.
     """
-    level_select = int(input())
+    level_select = int(take_input())
     if level_select < 0 or level_select > 5:
         print(f'You must choose a level between 1 and 5. You chose {level_select} !! Please enter again! ')
         return get_level_and_validate()
