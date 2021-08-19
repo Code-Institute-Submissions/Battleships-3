@@ -52,8 +52,10 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
     correct_guesses = 0
 
     while user_guesses < no_of_guesses:
-        guess_row = int(input('Guess Row Position: '))
-        guess_column = int(input('Guess Column Position: '))
+        guess_row = input('Guess Row Position: ')
+        guess_row = int(guess_row)
+        guess_column = input('Guess Column Position: ')
+        guess_column = int(guess_column)
         user_choice = [guess_row, guess_column]
 
         if guess_row not in range(rows) or guess_column not in range(cols):
