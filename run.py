@@ -77,13 +77,13 @@ be between 0 and {rows - 1}')
         elif board[guess_row][guess_column] == 'H ':
             print("""𝕐𝕠𝕦 𝔸𝕝𝕣𝕖𝕒𝕕𝕪 Guessed 𝕋𝕙𝕖 𝕋𝕒𝕣𝕘𝕖𝕥 ℍ𝕖𝕣𝕖❕❕❕""")
             print_board()
-            print(f"{user_guesses} Guesses of {no_of_guesses} Guesses Used!!")
+            print(f"{user_guesses} Guesses of {no_of_guesses} Guesses Used!!\n")
         elif user_choice in ship_locations:
             correct_guesses = correct_guesses + 1
             board[guess_row][guess_column] = 'H '
             user_guesses += 1
             print(HIT)
-            print(f"{user_guesses} Guesses of {no_of_guesses} Guesses Used!!")
+            print(f"{user_guesses} Guesses of {no_of_guesses} Guesses Used!!\n")
             if correct_guesses == no_of_ships:
                 print(CONGRAT)
                 print(WIN)
@@ -91,16 +91,16 @@ be between 0 and {rows - 1}')
         elif board[guess_row][guess_column] == 'X ':
             print("""𝕐𝕠𝕦 𝔸𝕝𝕣𝕖𝕒𝕕𝕪 𝕄𝕚𝕤𝕤𝕖𝕕 𝕋𝕙𝕖 𝕋𝕒𝕣𝕘𝕖𝕥 ℍ𝕖𝕣𝕖❕❕❕""")
             print_board()
-            print(f"{user_guesses} Guesses of {no_of_guesses} Guesses Used!!")
+            print(f"{user_guesses} Guesses of {no_of_guesses} Guesses Used!!\n")
         else:
             print("""𝕐𝕠𝕦 𝕄𝕚𝕤𝕤𝕖𝕕 𝕋𝕙𝕖 𝕥𝕒𝕣𝕘𝕖𝕥 ℍ𝕖𝕣𝕖❕❕❕""")
             board[guess_row][guess_column] = 'X '
             print_board()
             user_guesses += 1
-            print(f"{user_guesses} Guesses of {no_of_guesses} Guesses Used!!")
+            print(f"{user_guesses} Guesses of {no_of_guesses} Guesses Used!!\n")
             if user_guesses == no_of_guesses:
                 print(GAME_OVER)
-                print(f"Game Over You Only Have {no_of_guesses} Turns!!!!")
+                print(f"Game Over You Only Have {no_of_guesses} Turns!!!!\n")
                 break
 
 
