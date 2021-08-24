@@ -41,6 +41,7 @@ def take_input(label=""):
         value = int(input(label))
         return value
     except:
+        print(f"You must enter a number number here to guess the row and column")
         return take_input(label)
 
 

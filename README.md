@@ -37,7 +37,7 @@ Once all of the ships have been hit the user is presented a message stating that
 ![](images/sink_all.png)
 #
 
-If the user runs out of guesses the game is finished and the user is offered a Game Over message.
+If the user runs out of guesses the game is finished and the user is offered a Game Over message along with the number of guesses used, which is dependant on game level.
 
 ![](images/game_over.png)
 
@@ -49,9 +49,6 @@ If the user runs out of guesses the game is finished and the user is offered a G
 I tested the project throughout the coding process by printing the computers guesses out to the terminal allowing me to guess the correct or incorrect positions while checking that the code worked.  
 Once I was happy with the code I then deployed it to Heroku and tested again, where more bugs became apparent.  
 I had to then change the code, add, commit and push each time to allow the code to be tested in the Heroku mock terminal. 
-
-
-
 
 
 #
