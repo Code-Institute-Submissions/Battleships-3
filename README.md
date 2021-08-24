@@ -9,18 +9,18 @@ There are 5 level settings from 1 to 5. 1 being the easiest where there is a gri
 ## How To Play
 #
 To play the game you need to guess the computers positioning of the ship. The computer will generate a random position within the grid for you to guess the exact position when prompted within the terminal. The user is asked to input their required level between 1 and 5. The user is then asked to enter a column position, followed by a row position.  
-The user guesses the positions and is offered a message of whether or not they hit a ship. This is followed by either a H, for hit, or X, for a miss, which is placed onto the eboard at the guessed position.
+The user guesses the positions and is offered a message of whether or not they hit a ship. This is followed by either a H, for hit, or X, for a miss, which is placed onto the board at the guessed position.
 
 ![Grid Screenshot](/images/grid_screenshot.JPG)
  
 
 ![](/images/grid_screenshot_x.JPG)
 
-The example shown above shows a 5x 5 board with the X at row 2 / column 2. This X marks where a previous position was chosen but missed. The user will be presented with a print statement stating that the shot missed the target.
+The example shown above shows a 5 x 5 board with the X at row 2 / column 2. This X marks where a previous position was chosen but missed. The user will be presented with a print statement stating that the shot missed the target.
 #
 ![](/images/miss_target_sc.JPG)
 #
-If the user is to guess the same position again they willbe presented with a message stating this.
+If the user is to guess the same position again they will be presented with a message stating so.
 
 After each shot taken the guess countdown counts the users guess and increments within the terminal stating the number of turns left for the user.
 
@@ -28,11 +28,11 @@ When the position is guessed correctly then the user is presented with a message
 #
 ![](images/hit_ship.png)
 #
-If the user is to guess the same position again they will be presented with a message stating this.
+If the user is to guess the same position again they will be presented with a message stating so.
 #
 ![](images/hit_twice.png)  
 #
-Once all of the ships have been hit the user is presented a message stating that all ships have been destroyed.  
+Once all of the ships have been hit the user is presented with a message stating that all ships have been destroyed.  
 #
 ![](images/sink_all.png)
 #
@@ -40,8 +40,20 @@ Once all of the ships have been hit the user is presented a message stating that
 If the user runs out of guesses the game is finished and the user is offered a Game Over message along with the number of guesses used, which is dependant on game level.
 
 ![](images/game_over.png)
+#
 
-## Data Model
+## Features
+
+* Level select to allow for difficulty settings. Higher level creates a larger board with less ships and less guesses.
+* Random generated ship positions. Ships placed in random positions each new game.
+* Accepts and validates user input.
+* Number of guess counting. Each guess is deducted from the total number of guesses. This is displayed after each turn of the game.
+* Image displays to show hits and either game completion or game over.
+
+## Future Features
+
+* Play against computer. 
+* Create larger ships.
 
 #
 ## Testing
