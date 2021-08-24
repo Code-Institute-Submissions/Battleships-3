@@ -61,7 +61,7 @@ def set_game_board(no_of_ships, no_of_guesses, rows, cols):
         if location not in ship_locations:
             ships_added = ships_added + 1
             ship_locations.append(location)
-    print(ship_locations)
+    
     user_guesses = 0
     correct_guesses = 0
 
